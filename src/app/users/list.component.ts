@@ -15,8 +15,7 @@ export class ListComponent implements OnInit {
             .pipe(first())
             .subscribe(users => {
                 this.users = users['data'];
-                for(var i = 0; i < users['total']; i++) this.pag.push(i+1);
-                console.log(this.users);
+                for(var i = 0; i < users['total_pages']; i++) this.pag.push(i+1);
             });
     }
 
@@ -33,8 +32,8 @@ export class ListComponent implements OnInit {
             .pipe(first())
             .subscribe(users => {
                 this.users = users['data'];
-                for(var i = 0; i < users['total']; i++) this.pag.push(i+1);
-                console.log(this.users);
+                this.pag = [];
+                for(var i = 0; i < users['total_pages']; i++) this.pag.push(i+1);
             });
 
     }

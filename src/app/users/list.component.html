@@ -36,7 +36,8 @@
         <li class="page-item disabled">
             <a class="page-link" href="#" tabindex="-1">Previous</a>
         </li>
-        <li *ngFor="let item of pag;let indice=index" class="page-item"><a class="page-link" href="#">{{indice}}</a>
+        <li *ngFor="let item of pag;let indice=index" [class.disabled]="false" class="page-item"><a class="page-link"
+                (click)="changePage(indice + 1)" href="javascript:void(0)">{{indice + 1}}</a>
         </li>
 
         <li class="page-item">
